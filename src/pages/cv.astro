@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro"
+import FormCard from '../components/FormCardComponent.astro';
+import InputField from '../components/CasillasComponent.astro';
+import FileInput from '../components/FileComponent.astro';
+import SleepImage from '../components/ImagesComponent.astro';
+---
+<Layout>
+  <!-- Titulo e Imagen -->
+<SleepImage name="sleep" title="Trabaja con sleep" class="!w-[1500px]" />
+
+  <!-- Formulario -->
+<div class="mx-auto py-10">
+  <FormCard buttonText="Postular ahora">
+    <InputField id="nombre" label="Nombre" />
+    <InputField id="especialidad" label="Especialidad" />
+    <InputField id="correo" label="Correo" type="email" />
+    <FileInput id="archivo" label="Sube tu CV" />
+  </FormCard>
+</div>
+</Layout>

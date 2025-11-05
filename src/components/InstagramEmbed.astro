@@ -1,0 +1,12 @@
+---
+const { permalink } = Astro.props as { permalink: string };
+---
+<div class="w-full max-w-[540px] mx-auto">
+  <blockquote
+    class="instagram-media"
+    data-instgrm-permalink={permalink}
+    data-instgrm-version="14"
+    style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; padding:0; width:100%;"
+  ></blockquote>
+  <script async src="//www.instagram.com/embed.js"></script>
+</div>

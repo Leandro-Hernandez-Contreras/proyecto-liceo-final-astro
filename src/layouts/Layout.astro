@@ -1,0 +1,27 @@
+---
+import '../styles/global.css'
+import HeaderComponent from '../components/HeaderComponent.astro';
+import FooterComponent from '../components/FooterComponent.astro';
+import Fondo from '../assets/images/liceo.png'
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/assets/images/iconos/Logo-Liceo-Aytue-TRAJAM-PRO-4.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Liceo Aytue</title>
+	</head>
+	<body>
+		<div class="fixed inset-0 bg-cover bg-center bg-no-repeat bg-fixed -z-10" style={`background-image: url(${Fondo.src})`}></div>
+		<HeaderComponent />
+		<main class="pt-24">
+			<slot />
+		</main>
+		<FooterComponent />
+	</body>
+</html>
+
+
+

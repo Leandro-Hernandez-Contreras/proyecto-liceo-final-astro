@@ -1,0 +1,137 @@
+---
+import type { MenuItem } from '../data/Props';
+import { menuItems } from '../data/Props';  
+
+const { items = menuItems } = Astro.props;
+---
+
+<div class="fixed top-0 w-full z-50 bg-[#003366]/95 shadow-md">
+  <nav class="w-full max-w-[1200px] mx-auto flex items-center justify-between px-4 h-24">
+    <a href="/" class="absolute top-0 left-[20px] z-20">
+      <img id="logo" src="../../src/assets/images/iconos/Logo-Liceo-Aytue-TRAJAM-PRO-4.png" 
+            alt="logo liceo aytue"
+            class="h-[150px] transition-all duration-300" />
+    </a>
+    <ul id="main-menu" class="hidden md:flex flex-col md:flex-row items-center list-none md:ml-20 gap-4 absolute md:static top-24 left-0 w-full md:w-auto bg-[#003366]/95 md:bg-transparent p-4 md:p-0">
+      {items.map((item: MenuItem) => (
+        <li class="relative group">
+          <a href={item.href} class={`px-3 py-2 block whitespace-nowrap ${item.style || "hover:text-red-600"}`}>
+            {item.texto}
+          </a>
+
+          {item.submenu && item.submenu.length > 0 && (
+            <ul class="sub-menus">
+              {item.submenu.map((sub: MenuItem) => (
+                <li class="relative group/sub w-full">
+                  <a href={sub.href || '#'} class="block px-4 py-3 hover:bg-black/[0.7] hover:text-red-600 rounded-xl transition-colors duration-300 ">
+                    {sub.texto}
+                  </a>
+
+                  {sub.submenu && sub.submenu.length > 0 && (
+                    <ul class="sub-sub-menus">
+                      {sub.submenu.map((sub2: MenuItem) => (
+                        <li> 
+                          <a href={sub2.href || '#'} class="block px-3 py-[7px] hover:bg-black/[0.7] hover:text-red-600 rounded-xl transition-colors duration-300">
+                            {sub2.texto}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+    <div class="md:hidden ml-auto">
+      <button id="menu-toggle" type="button" class="p-2 rounded-md text-letras focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-menu">
+        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainMenu = document.getElementById('main-menu');
+    const logoImg = document.getElementById('logo');
+    const mdQuery = window.matchMedia('(min-width: 768px)');
+    const underLgQuery = window.matchMedia('(max-width: 1023px)'); // móvil y tablet
+
+    if (menuToggle && mainMenu) {
+      menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('hidden');
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+
+        // Achicar/agrandar el logo al abrir/cerrar el menú en móvil
+        if (logoImg) {
+          const menuIsOpen = !isExpanded;
+          if (!mdQuery.matches) { // solo en móvil
+            logoImg.classList.toggle('h-[150px]', !menuIsOpen);
+            logoImg.classList.toggle('h-[100px]', menuIsOpen);
+          }
+        }
+      });
+    }
+
+    // Toggle de submenús en móvil conservando el diseño existente
+    // Top-level items
+    document.querySelectorAll('#main-menu > li').forEach((li) => {
+      const trigger = li.querySelector('a');
+      const subMenu = li.querySelector('.sub-menus');
+      if (trigger && subMenu) {
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', (e) => {
+          if (underLgQuery.matches) { // móvil y tablet
+            e.preventDefault();
+            const opened = subMenu.classList.contains('opacity-100');
+            subMenu.classList.toggle('opacity-100', !opened);
+            subMenu.classList.toggle('visible', !opened);
+            subMenu.classList.toggle('translate-y-0', !opened);
+            subMenu.classList.toggle('opacity-0', opened);
+            subMenu.classList.toggle('invisible', opened);
+            subMenu.classList.toggle('translate-y-2', opened);
+            // Orientación lateral en móvil
+            subMenu.classList.toggle('side-open', !opened);
+            trigger.setAttribute('aria-expanded', String(!opened));
+          }
+        });
+      }
+    });
+
+    // Sub-submenús
+    document.querySelectorAll('#main-menu li[class*="group/sub"]').forEach((li) => {
+      const trigger = li.querySelector('a');
+      const subSubMenu = li.querySelector('.sub-sub-menus');
+      if (trigger && subSubMenu) {
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.addEventListener('click', (e) => {
+          if (underLgQuery.matches) { // móvil y tablet
+            e.preventDefault();
+            const opened = subSubMenu.classList.contains('opacity-100');
+            subSubMenu.classList.toggle('opacity-100', !opened);
+            subSubMenu.classList.toggle('visible', !opened);
+            subSubMenu.classList.toggle('translate-y-0', !opened);
+            subSubMenu.classList.toggle('opacity-0', opened);
+            subSubMenu.classList.toggle('invisible', opened);
+            subSubMenu.classList.toggle('translate-y-2', opened);
+            // Orientación lateral en móvil
+            subSubMenu.classList.toggle('side-open', !opened);
+            // Separación lateral explícita para enfatizar apertura hacia la derecha
+            subSubMenu.classList.toggle('translate-x-2', !opened);
+            subSubMenu.classList.toggle('translate-x-0', opened);
+            trigger.setAttribute('aria-expanded', String(!opened));
+          }
+        });
+      }
+    });
+  });
+</script>

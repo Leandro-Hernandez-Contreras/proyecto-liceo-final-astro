@@ -1,0 +1,66 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import articlesData from "../../data/dataBlog.json";
+
+export async function getStaticPaths() {
+  const articles = articlesData;
+  return articles.map((article, index) => ({
+    params: { id: String(article.id) },
+    props: { article, index },
+  }));
+}
+
+const { article, index } = Astro.props as { article: any; index: number };
+const articles = articlesData as any[];
+const prev = index > 0 ? articles[index - 1] : undefined;
+const next = index < articles.length - 1 ? articles[index + 1] : undefined;
+---
+
+<Layout>
+  <main class="cards-big">
+    {article ? (
+      <>
+        {article.imagen && (
+          <img
+            src={article.imagen}
+            alt={article.title}
+            class="w-full rounded-lg shadow-lg mb-8"
+          />
+        )}
+
+        <h1 class="text-3xl font-bold mb-2">{article.title}</h1>
+        <p class="text-letras mb-6">
+          {article.fecha} · {article.categoria}
+        </p>
+
+        <div class="letras-arti space-y-4">
+          <p>{article.contenido}</p>
+          <p>{article.contenidodos}</p>
+          <p>{article.contenidotres}</p>
+        </div>
+
+        <nav class="botones-arti">
+          <a href="/blog/noticias" class="boton-arti">&larr; Volver al Blog</a>
+          {prev && (
+            <a href={`/blog/${prev.id}`} class="boton-arti ml-110">
+              &larr; Artículo anterior
+            </a>
+          )}
+          {next && (
+            <a href={`/blog/${next.id}`} class="boton-arti">
+              Siguiente artículo &rarr;
+            </a>
+          )}
+        </nav>
+      </>
+    ) : (
+      <div class="bg-cards rounded-lg p-6 text-letras shadow">
+        <h2 class="text-xl font-bold mb-2">Artículo no encontrado</h2>
+        <p>Lo sentimos, no pudimos encontrar el contenido solicitado.</p>
+        <a href="/blog/noticias" class="inline-block mt-4 text-blue-600 hover:text-blue-800">
+          &larr; Volver al Blog
+        </a>
+      </div>
+    )}
+  </main>
+</Layout>

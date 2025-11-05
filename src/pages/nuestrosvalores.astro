@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import  NuestrosValoresImage  from '../components/ImagesComponent.astro';
+import CardsComponent from '../components/CardsComponent.astro';
+---
+<Layout>
+    <!-- Titulo e Imagen-->
+<NuestrosValoresImage name="valores" title="Nuestros Valores" />
+    <!-- Descripcion -->
+<div class="cards-big">
+    <p>
+        A partir de estas definiciones, podemos establecer los valores, los que constituirán las guías fundamentales 
+        de nuestro actuar que destacamos y deben ser vivenciados, enseñados y fortalecidos en forma transversal, 
+        compromiso y responsabilidad no solo de los educadores sino de toda la comunidad educativa.
+    </p>
+</div>
+    <!-- Cards Valores -->
+<CardsComponent />
+</Layout>

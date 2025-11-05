@@ -1,0 +1,23 @@
+---
+export interface Props {
+  href: string;
+  titulo: string;
+  autor: string;
+  fecha: string;
+}
+const { href, titulo, autor, fecha } = Astro.props;
+---
+
+<div class="border-b border-bordes/[0.4] pb-4">
+  <a href={href}>
+    <h3 class="underline text-[20px] hover:text-red-600/[0.9]">
+      {titulo}
+    </h3>
+  </a>
+  <p class="mt-1">
+    <slot />
+  </p>
+  <h6 class="text-[10px] text-letras mt-2">
+    Publicado por {autor} - {fecha}
+  </h6>
+</div>

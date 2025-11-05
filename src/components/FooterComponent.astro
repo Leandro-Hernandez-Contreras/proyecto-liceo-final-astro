@@ -1,0 +1,46 @@
+---
+import ImagesFooterComponent from './ImagesFooterComponent.astro';
+---
+<footer class="relative bg-cards p-5">
+  <div class="relative text-letras w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 items-start gap-6 md:gap-8 px-4 md:px-5 py-4 md:py-5">
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td><strong>Horario atención al publico:</strong></td>
+          </tr>
+          <tr>
+            <td>Lunes - Viernes 8:00 a 17:00 hrs.</td>
+          </tr>
+          <tr>
+            <td><strong>Dirección:</strong></td>
+          </tr>
+          <tr>
+            <td>Intendente García #674</td>
+          </tr>
+          <tr>
+            <td><strong>Teléfono:</strong></td>
+          </tr>
+          <tr>
+            <td>(65) 253 1153</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex justify-center md:justify-start mt-6 md:mt-0">
+      <ImagesFooterComponent name="sleep" class="w-full max-w-[550px] h-[160px] sm:h-[200px] object-cover rounded-lg mx-auto md:mx-0" />
+    </div>
+    <div class="text-center mt-6 md:mt-0">
+      <h3 class="mb-4 inline-block text-lg font-semibold">Síguenos</h3>
+      <div class="flex justify-center items-center gap-4 mt-2.5">
+      <ImagesFooterComponent name="facebook" />
+      <ImagesFooterComponent name="instagram" />
+      <ImagesFooterComponent name="youtube" />
+      <ImagesFooterComponent name="gmail" />
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-bordes/[0.7] p-4 text-center text-sm text-letras">
+    <p>&copy; 2025 Liceo Aytue. Todos los derechos reservados.</p>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+---
+import Layout from "../layouts/Layout.astro"
+import VideoCarrera from '../assets/video/conectividadyredes.mp4';
+---
+<Layout>
+<!-- Título de la carrera -->
+<div class="titulos-base">
+  <h1 class="titulos">Carrera de Técnico Nivel Medio en Conectividad y Redes</h1>
+</div>
+<!-- Video de la carrera -->
+<video src={VideoCarrera} class="w-full max-w-[800px] h-auto rounded-lg shadow-lg mx-auto mb-10 mt-10" controls></video>
+<!-- Descripción de la carrera -->
+<div>
+    <p class="cards-big">
+        Con Resolución Exenta N° 717 del 30 de junio de 2022, el Liceo Aytue, a contar del 1° de marzo del mismo año, amplió su reconocimiento oficial como establecimiento educacional, siendo la Secretaría Ministerial de Educación de la Región de Los Lagos, quien autoriza esta nueva especialidad Técnico-Profesional, TP, ligado al sector económico denominado Tecnología y Comunicaciones, correspondiente a la Especialidad de Conectividad y Redes (Código de Enseñanza 510). <br><br>    
+        Inicia esta Unidad Educativa su polivalencia, en la cual sus estudiantes, y desde 2° Medio podrán optar por esta especialidad o continuar con sus estudios Humanista-Científico cuyo propósito es la Educación Superior.
+    </p>
+</div>
+</Layout>

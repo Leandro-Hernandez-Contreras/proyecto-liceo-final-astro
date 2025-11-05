@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro"
+import EmblemaImage from '../components/ImagesComponent.astro';
+import VideoHimno from '../assets/video/HIMNO-LICEO-AYTUE-2023.mp4'
+import Emblema1980 from '../assets/images/emblema/1980.png'
+import Emblema2017 from '../assets/images/emblema/2017.png'
+import Emblema2020 from '../assets/images/emblema/2020.png'
+import Emblema2025 from '../assets/images/emblema/2025.png'
+---
+
+<Layout>
+ <!-- imagen y título -->
+<EmblemaImage name="emblema" title="Emblemas" />
+<!-- Emblemas -->
+<div class="flex flex-wrap justify-center gap-8 p-5">
+  <div class="box">
+    <img src={Emblema1980.src} alt="Emblema institucional 1980" class="img-emblema !w-[250px]">
+    <h5 class="titulo-emblema">1980</h5>
+  </div>
+  <div class="box">
+    <img src={Emblema2017.src} alt="Emblema institucional 2017" class="img-emblema">
+    <h5 class="titulo-emblema">2017</h5>
+  </div>
+  <div class="box">
+    <img src={Emblema2020.src} alt="Emblema institucional 2020" class="img-emblema">
+    <h5 class="titulo-emblema">2020</h5>
+  </div>
+  <div class="box">
+    <img src={Emblema2025.src} alt="Emblema institucional 2025" class="img-emblema">
+    <h5 class="titulo-emblema">2025</h5>
+  </div>
+</div>
+  <!-- Himno -->
+<section class="cards-big">
+  <h3 class="text-[40px] font-bold mb-6 text-center">HIMNO DE LICEO AYTUE</h3>
+  <div class="space-y-4 text-center">
+    <p>Con cariño y amor de estudiante</p>
+    <p>Este Liceo proclama feliz</p>
+    <p>El sendero infinito y radiante</p>
+    <p>Que en tus aulas podemos seguir</p>
+
+    <p>Son felices los años pasados</p>
+    <p>Esparciendo con mucho tesón</p>
+    <p>La simiente que nunca se extingue</p>
+    <p>Cual rosal que jamás se esfumó</p>
+
+    <p>Caminemos por largos senderos</p>
+    <p>Buscaremos con ansia y afán</p>
+    <p>Lo que todos en la vida queremos,</p>
+    <p>La virtud, el progreso y la paz</p>
+
+    <p>El Castro alto orgullosa levantas</p>
+    <p>Siempre alerta guiando el saber</p>
+    <p>Derramando a raudales su esencia</p>
+    <p>Que en la vida nos lleve a vencer</p>
+
+    <p>Son felices los años pasados</p>
+    <p>Tu simiente se esparce sin fin</p>
+    <p>Seguiremos tus nobles consejos</p>
+    <p>Para así orgulloso surgir.</p>
+  </div>
+</section>
+<!-- Video Himno -->
+<video src={VideoHimno} class="w-full max-w-[800px] h-auto rounded-lg shadow-lg mx-auto mb-10 mt-10" controls></video>
+</Layout>

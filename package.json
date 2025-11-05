@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-liceo-final-astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@fontsource-variable/merriweather": "^5.2.6",
+    "@fontsource-variable/open-sans": "^5.2.7",
+    "@fontsource/libre-baskerville": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.14",
+    "astro": "^5.14.1",
+    "tailwindcss": "^4.1.14"
+  }
+}

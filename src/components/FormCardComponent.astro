@@ -1,0 +1,17 @@
+---
+export interface Props {
+  buttonText?: string; 
+}
+
+const { buttonText = 'Enviar' } = Astro.props; 
+---
+
+<form class="bg-cards/[0.7] p-8 rounded-lg shadow-lg w-full max-w-md space-y-4 mx-auto mb-10">
+  
+  <slot />
+
+  <button
+    type="submit"
+    class="w-full bg-cvfondos text-letras py-2 rounded-md hover:bg-cvfondos/[0.8] transition">
+    {buttonText} </button>
+</form>

@@ -1,0 +1,40 @@
+---
+import type { ImageFooterProps } from '../data/Props';
+import facebook from '../assets/images/iconos/facebook.png';
+import instagram from '../assets/images/iconos/instagram.png';
+import youtube from '../assets/images/iconos/youtube.png';
+import gmail from '../assets/images/iconos/gmail.png';
+import sleep from "../assets/images/iconos/sleep.png";
+
+
+const {
+  name,class: className = 'h-10 w-10 transition-all duration-300 hover:scale-[1.15] hover:opacity-80'} = Astro.props as ImageFooterProps;
+
+let src = '';
+let href = '#';
+let target = '_blank';
+
+if (name === 'facebook') {
+  src = facebook.src;
+  href = 'https://www.facebook.com/liceoaytue';
+} else if (name === 'instagram') {
+  src = instagram.src;
+  href = 'https://www.instagram.com/liceo_aytue_castro/';
+} else if (name === 'youtube') {
+  src = youtube.src;
+  href = 'https://www.youtube.com/@liceoaytue';
+} else if (name === 'gmail') {
+  src = gmail.src;
+  href = 'mailto:contacto@liceoaytue.cl';
+  target = '_self'; 
+} else if (name === 'sleep'){
+  src = sleep.src
+  href = 'https://slepchiloe.gob.cl/'
+  target = '_blank'
+  }
+---
+  <a href={href} target={target}>
+    <img src={src} alt={name} class={className} />
+  </a>
+
+

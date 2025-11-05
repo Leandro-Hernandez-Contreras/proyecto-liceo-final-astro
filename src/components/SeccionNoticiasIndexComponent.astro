@@ -1,0 +1,32 @@
+---
+import ArticulodeNoticia from './ArticulosNoticiasIndexComponent.astro';
+
+export interface Noticia {
+  href: string;
+  titulo: string;
+  autor: string;
+  fecha: string;
+  resumen: string;
+}
+
+export interface Props {
+  noticias: Noticia[];
+}
+
+const { noticias } = Astro.props;
+---
+
+<div>
+  <div>
+    {noticias.map(noticia => (
+      <ArticulodeNoticia
+        href={noticia.href}
+        titulo={noticia.titulo}
+        autor={noticia.autor}
+        fecha={noticia.fecha}
+      >
+        {noticia.resumen}
+      </ArticulodeNoticia>
+    ))}
+  </div>
+</div>

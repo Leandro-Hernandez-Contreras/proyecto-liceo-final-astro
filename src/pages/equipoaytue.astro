@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro"
+import TeamSection from '../components/EquipoSeccionComponent.astro';
+import TeamCard from '../components/EquipoCardsComponent.astro';
+import { directivo, gestion, profesores, asistentes } from '../data/Props.ts';
+---
+
+<Layout>
+  <!-- Cards de Equipo Base -->
+<div class="pt-28 max-w-5xl mx-auto px-4">
+  <!-- Cards de Equipo Directivo -->
+  <TeamSection title="Equipo Directivo">
+    {directivo.map(member => (
+      <TeamCard
+        src={member.src}
+        text={member.text}
+      />
+    ))}
+  </TeamSection>
+  <!-- Cards de Equipo de Gestion -->
+  <TeamSection title="Equipo de Gestión" containerClass="!gap-8">
+    {gestion.map(member => (
+      <TeamCard
+        src={member.src}
+        text={member.text}
+      />
+    ))}
+  </TeamSection>
+  <!-- Cards de Equipo de Profesores -->
+  <TeamSection title="Equipo de Profesores" containerClass="!grid grid-cols-3 gap-8">
+    {profesores.map(member => (
+      <TeamCard
+        src={member.src}
+        text={member.text}
+      />
+    ))}
+  </TeamSection>
+  <!-- Cards de Equipo de Asistentes -->
+  <TeamSection title="Equipo de Asistentes" containerClass="!grid grid-cols-3 gap-8">
+    {asistentes.map(member => (
+      <TeamCard
+        src={member.src}
+        text={member.text}
+      />
+    ))}
+  </TeamSection>
+</div>
+</Layout>

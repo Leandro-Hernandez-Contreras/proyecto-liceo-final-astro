@@ -1,0 +1,117 @@
+---
+interface Props {
+  galleryImages: string[];
+}
+const { galleryImages } = Astro.props;
+---
+
+<section
+  id="gallery-section"
+  class="max-w-6xl mx-auto p-6" 
+>
+  <h2 class="titulos !mx-auto m-10">
+    Galería
+  </h2>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+    {
+      galleryImages.map((src, index) => (
+        <img
+          src={src}
+          alt={`Imagen ${index + 1}`}
+          class="gallery-thumbnail w-full h-40 object-cover rounded-lg shadow cursor-pointer transition-all hover:opacity-80 hover:scale-105"
+          data-index={index}
+          loading="lazy"
+        />
+      ))
+    }
+  </div>
+</section>
+
+<div
+  id="lightbox-modal"
+  class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-[100] p-4"
+>
+  <button
+    id="lightbox-close-btn"
+    class="absolute top-5 right-5 text-white text-4xl hover:text-red-400 z-10"
+  >
+    &times;
+  </button>
+
+  <img
+    id="lightbox-image"
+    src=""
+    alt="Imagen ampliada"
+    class="max-h-[85vh] max-w-[95vw] object-contain"
+  />
+
+  <button
+    id="lightbox-prev-btn"
+    class="absolute left-6 top-1/2 text-white text-4xl bg-black/50 hover:bg-black/70 px-3 py-1 rounded-full"
+  >
+    &#10094;
+  </button>
+  <button
+    id="lightbox-next-btn"
+    class="absolute right-6 top-1/2 text-white text-4xl bg-black/50 hover:bg-black/70 px-3 py-1 rounded-full"
+  >
+    &#10095;
+  </button>
+
+  <div
+    id="lightbox-counter"
+    class="absolute bottom-6 text-white text-sm bg-black/50 px-3 py-1 rounded-full"
+  >
+    1 / {galleryImages.length}
+  </div>
+</div>
+
+<script define:vars={{ galleryImages }}>
+  let currentImageIndex = 0;
+
+  const gallerySection = document.getElementById("gallery-section");
+  const lightboxModal = document.getElementById("lightbox-modal");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const counter = document.getElementById("lightbox-counter");
+  const closeBtn = document.getElementById("lightbox-close-btn");
+  const prevBtn = document.getElementById("lightbox-prev-btn");
+  const nextBtn = document.getElementById("lightbox-next-btn");
+
+
+  const thumbnails = gallerySection.querySelectorAll('.gallery-thumbnail');
+  
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', (event) => {
+      const index = parseInt(event.target.dataset.index);
+      openLightbox(index);
+    });
+  });
+
+  function openLightbox(index) {
+    currentImageIndex = index;
+    lightboxImage.src = galleryImages[currentImageIndex];
+    counter.textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+    lightboxModal.classList.remove('hidden');
+  }
+
+  closeBtn.addEventListener('click', () => {
+    lightboxModal.classList.add('hidden');
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentImageIndex = currentImageIndex + 1;
+    if (currentImageIndex >= galleryImages.length) {
+      currentImageIndex = 0;
+    }
+    openLightbox(currentImageIndex); 
+  });
+
+  prevBtn.addEventListener('click', () => {
+    currentImageIndex = currentImageIndex - 1;
+    if (currentImageIndex < 0) {
+      currentImageIndex = galleryImages.length - 1;
+    }
+    openLightbox(currentImageIndex); 
+  });
+</script>

@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import VideoInstitucional from "../assets/video/INSTITUCIONAL-LICEO-AYTUE-2025.mp4"
+---
+<Layout>
+  <!-- Titulo -->
+<div class="titulos-base">
+  <h1 class="titulos">Video Institucional</h1>
+</div>
+  <!-- Descripcion -->
+<div class="cards-big !text-center">
+  <p class="p-[32px]">
+    ¡Ya está aquí nuestro Video Institucional 2025! <br><br>
+    El Liceo Aytue, con casi 60 años de historia en la ciudad de Castro, reflejo de nuestro compromiso con una educación inclusiva, integral y de calidad. <br><br>
+    Con más de 700 estudiantes y un equipo humano comprometido, somos un referente en el sector alto de la ciudad, trabajando día a día por entregar oportunidades reales en un entorno que valora la identidad, los aprendizajes y la formación en valores. <br><br>
+    Conoce más sobre nuestra comunidad educativa, proyectos y visión de futuro. <br><br>
+    ¡Revisa el video completo en nuestras plataformas! y visita nuestra página web www.liceoaytue.cl #VideoInstitucional2025 #EducaciónConValores #CastroChiloé
+  </p>
+</div>
+<!-- Video institucional -->
+<video src={VideoInstitucional} class="w-[800px] h-auto rounded-lg shadow-lg mx-auto mb-[40px] mt-[40px]" controls></video>
+</Layout>

@@ -1,0 +1,106 @@
+  ---
+  export interface Props {
+    src: string[];
+  }
+  const { src } = Astro.props;
+  ---
+
+  <div
+    id="carousel"
+    class="relative w-full h-64 sm:h-72 md:h-96 overflow-hidden rounded-lg shadow-lg"
+  >
+    <div class="slides-container relative w-full h-full">
+      {
+        src.map((src) => (
+          <div
+            class:list={[
+              "slide",
+              "card-img-ind",
+              "absolute",
+              "inset-0",
+              "transition-opacity",
+              "duration-700",
+              "ease-in-out",
+              "opacity-0",
+              "z-0",
+            ]}
+          >
+            <img src={src} class="img-ind w-full h-full object-cover" />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="absolute bottom-4 left-1/2 z-20 flex -translate-x-1/2 gap-2">
+      {
+        src.map((_) => (
+          <button class="indicator h-3 w-3 rounded-full bg-white opacity-50 transition-opacity duration-300 hover:opacity-100" />
+        ))
+      }
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const carousel = document.getElementById("carousel");
+      if (!carousel) return;
+
+      const slides = carousel.querySelectorAll(".slide");
+      const indicators = carousel.querySelectorAll(".indicator");
+
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      let autoSlideInterval: number | undefined;
+
+      function showSlide(index: number) {
+        if (index < 0 || index >= totalSlides) {
+          console.error(`Índice de slide inválido: ${index}`);
+          return;
+        }
+
+        slides.forEach((slide) => {
+          slide.classList.add("opacity-0", "z-0");
+          slide.classList.remove("opacity-100", "z-10");
+        });
+
+        indicators.forEach((ind) => {
+          ind.classList.remove("active", "opacity-100");
+          ind.classList.add("opacity-50");
+        });
+
+        if (slides[index]) {
+          slides[index].classList.remove("opacity-0", "z-0");
+          slides[index].classList.add("opacity-100", "z-10");
+        }
+
+        if (indicators[index]) {
+          indicators[index].classList.add("active", "opacity-100");
+          indicators[index].classList.remove("opacity-50");
+        }
+
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const nextIndex = (currentSlide + 1) % totalSlides;
+        showSlide(nextIndex);
+      }
+
+      function startAutoSlide() {
+        if (autoSlideInterval) clearInterval(autoSlideInterval);
+        autoSlideInterval = window.setInterval(nextSlide, 3000);
+      }
+
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => {
+          showSlide(index);
+          startAutoSlide();
+        });
+      });
+
+      if (totalSlides > 0) {
+        showSlide(0);
+        startAutoSlide();
+      }
+    });
+  </script>

@@ -1,0 +1,144 @@
+@import "@fontsource-variable/open-sans";
+@import "@fontsource/libre-baskerville";
+@import "tailwindcss";
+
+@theme {
+  --font-open: "Open Sans Variable", sans-serif;
+  --font-titulos: "Libre Baskerville Variable", serif;
+
+  --color-cards: #003366; /* Color de fondo de las tarjetas */
+  --color-letras: #ffffff;
+  --color-letras-dos: #000000; 
+  --color-bordes: #fb2c36; /* Color de los bordes */
+  --color-menu: #fb2c36; /* Color de los items del menu */
+  --color-submenus: #003366; /* Color de fondo del menu */
+  --color-cvfondos: #003366; /* Color de fondo de los cv */
+}
+/*Cards*/
+@layer components{
+  .cards-big{
+    @apply mx-auto w-full max-w-[1100px] font-open mt-8 md:mt-12 mb-10 md:mb-12 p-4 md:p-6 rounded-xl text-letras text-[1.1rem] leading-[2] bg-cards/[0.7];
+  }
+  .card-equipo {
+    @apply flex justify-center mb-10;
+  }
+  .card-equipo-gen {
+    @apply bg-cards/[0.7] shadow-lg rounded-xl p-5 text-center; 
+  }
+  .text-card {
+    @apply text-letras text-sm; 
+  }
+  .card-titulo{
+    @apply text-[24px] text-letras mb-2 font-semibold;
+  }
+}
+/*Menu*/
+@layer components{
+  .menu-item{
+    @apply text-letras font-medium px-2 py-3 inline-block transition duration-300 group-hover:text-red-500 group-hover:border-b-2 border-bordes;
+  }
+  .sub-menus{
+    @apply absolute top-full left-0 mt-2 bg-submenus/[0.7] text-letras shadow-lg rounded-xl w-[220px] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-in-out z-50;
+  }
+  .sub-menus.side-open{
+    @apply top-0 left-full ml-1 mt-0;
+  }
+  .sub-sub-menus{
+    @apply absolute top-0 left-full ml-1 bg-submenus/[0.7] shadow-lg rounded-xl w-[150px] opacity-0 invisible translate-y-2 group-hover/sub:opacity-100 group-hover/sub:visible group-hover/sub:translate-y-0 transition-all duration-300 ease-in-out z-50;
+  }
+  .sub-sub-menus.side-open{
+    @apply top-0 left-full ml-2 mt-0;
+  }
+}
+
+/* Historia */
+@layer components {
+  .tabla-general {
+    @apply bg-cards/[0.7] text-letras opacity-90;
+  }
+  .tabla-texto {
+    @apply px-6 py-4 font-open border border-bordes ;
+  }
+  .tabla-texto2 {
+    @apply px-6 py-4 border border-bordes;
+  }
+}
+/*Titulos*/
+@layer components{
+  .titulos-base{
+    @apply w-full max-w-[550px] sm:max-w-[420px] mx-auto mt-6 md:mt-10 flex justify-center items-center rounded-lg px-4;
+  }
+  .titulos{
+    @apply font-semibold font-titulos bg-cards/[0.9] text-letras w-full max-w-[500px] sm:max-w-[380px] rounded-2xl text-center p-3 sm:p-4 text-2xl sm:text-3xl;
+  }
+  .titulo-misionyvisionbase{
+    @apply bg-cards/[0.7] text-letras rounded-2xl shadow-lg p-8 hover:shadow-xl transition ml-10;
+  }
+  .titulo-misionyvision{
+    @apply text-3xl font-bold font-titulos text-letras mb-3 border-b-2 pb-2 border-bordes;
+  }
+  .titulo-contacto{
+    @apply text-center text-3xl font-bold font-titulos mb-6 mt-5;
+  }
+  .titulo-emblema{
+    @apply text-2xl font-bold text-letras text-center mb-4;
+  }
+}
+/*Videos*/
+@layer components{
+  .videos-salidas{
+    @apply rounded-2xl overflow-hidden shadow-lg border border-gray-200 w-full max-w-[540px] h-[220px] sm:h-[260px] md:h-[300px];
+  }
+}
+/*Contacto*/
+@layer components{
+  .contacto{
+    @apply text-center font-open mb-2;
+  }
+}
+/*Imagenes*/
+@layer components{
+  .img-emblema{
+    @apply h-[250px] w-[200px] bg-white;
+  }
+  .imagen-historia{
+    @apply w-full max-w-[1000px] mx-auto mt-8 mb-8 p-4 sm:p-6;
+  }
+  .img-card {
+    @apply w-40 h-52 mx-auto object-cover rounded-md mb-4; 
+  }
+}
+/* Letras */
+@layer components{
+  .letras-arti{
+    @apply text-letras text-[1.1rem] leading-[2];
+  }
+}
+/*Base*/
+@layer components{
+  .box{
+    @apply bg-cards/[0.8] rounded-xl shadow-md p-4;
+  }
+}
+/*Otros*/
+@layer components{
+  .botones-arti{
+    @apply mt-12 flex justify-between font-semibold;  
+  }
+  .boton-arti{
+    @apply  transition-colors;
+  }
+}
+
+/*Movimiento texto index*/
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}

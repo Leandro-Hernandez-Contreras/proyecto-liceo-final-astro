@@ -1,0 +1,49 @@
+---
+import type { CardAporte } from "../data/Props"; 
+
+const cards: CardAporte[] = [
+  {
+    title: "Pensamiento crítico",
+    description:
+      "El pensamiento crítico es el proceso de filtrar, analizar y cuestionar argumentos, información y/o contenido que se encuentra en varios medios, identificando patrones y conexiones, desarrollando un conocimiento significativo y aplicándolo al mundo real, para luego sintetizarlo en una forma que tenga valor para el estudiante. Esta competencia presenta una relevancia mayor en nuestros días, especialmente para los estudiantes, puesto que el uso masivo de las NTIC’s y dentro del contexto globalizado, en el cual nos desarrollamos, es necesario fortalecer un pensamiento más opinante y profundo respecto a la cantidad y procesamiento de información a la cual nos enfrentamos día a día, por los diferentes canales digitales que usamos de manera habitual.",
+  },
+  {
+    title: "Colaboración",
+    description:
+      "La colaboración es una habilidad de utilizar varias personalidades, talentos y conocimientos de una manera para crear un resultado máximo. El resultado debe proporcionar un beneficio para toda la comunidad o un grupo. Debido a la sinergia, esto es, trabajos en equipo, con fuertes habilidades interpersonales, el resultado común tiene un valor mayor que la suma de valores de cada resultado individual. Una de las críticas que se realizan actualmente respecto al uso de las NTIC’s es el individualismo que puede causar en los usuarios de edades iniciales y preadolescentes. Debido a lo anterior, estas Habilidades del Siglo XXI estarán presentes e incorporadas en todo el proceso formativo del establecimiento educacional, de manera que el uso de la tecnología sea una herramienta al servicio de las personas, evitando de esta manera la instrumentalización de las mismas.",
+  },
+  {
+    title: "Comunicación",
+    description:
+      "La comunicación es una habilidad de presentar información de una manera clara, concisa y significativa, con una variedad de estilos, modalidades y herramientas diseñadas para una variedad de audiencias. También designa la escucha atenta y la articulación de pensamientos. La comunicación tiene varios propósitos: informar, instruir, motivar y persuadir. A través del desarrollo de la identidad en NTIC´s de su PEI, el Liceo desarrollará diferentes plataformas digitales a través del tiempo, con la finalidad de conectarlo con su comunidad educativa, propiciando la eficiencia y eficacia en esta área y fortaleciendo un acercamiento mayor con todos sus componentes. Un ejemplo de ello son las plataformas Web, Facebook, Liceo Aytue TV, solo por mencionar algunos.",
+  },
+  {
+    title: "Creatividad",
+    description:
+      "En el siglo XXI, una persona debe poder crear algo nuevo o crear algo de una manera nueva, utilizando los conocimientos que ya ha adquirido. En resumen, poseer una visión emprendedora para oportunidades económicas y sociales, haciendo las preguntas adecuadas para generar ideas novedosas y el liderazgo para convertir esas ideas en acción. No solo significa arte, sino también varias soluciones a un problema en situaciones de la vida real. Esta habilidad, inserta en el currículum del Liceo en todos sus niveles, se potencia con la incorporación, desde temprana edad, en diferentes talleres de libre elección, tendientes todos ellos a incentivar la creación de una nueva respuesta para un nuevo mundo que emerge y se transforma constantemente.",
+  },
+  {
+    title: "Ciudadanía / Cultura",
+    description:
+      "Es importante que una persona esté en contacto con todo lo que le rodea, como ciudadanos del mundo, tomando en cuenta los problemas mundiales, basado en un conocimiento valórico profundo, con un interés genuino para resolver problemas complejos y ambiguos de la vida real que afectan la sostenibilidad humana y ambiental, concepto que se refuerza en el PEI a través del reconocimiento a la identidad local y que se potencia a través de la creación y uso constante de las diferentes plataformas digitales que serán la base de una difusión y comunicación más fluida y rápida con la comunidad educativa, local, regional, nacional y extranjera.",
+  },
+  {
+    title: "Educación del carácter / Conectividad",
+    description:
+      "Fullan, M., destaca la educación del carácter como la última C. Incluye el compromiso del establecimiento educacional para ayudar a los jóvenes a convertirse en ciudadanos responsables, solidarios y contribuyentes. Esto es, armados con los rasgos esenciales del carácter: coraje, tenacidad, perseverancia y resiliencia, junto con la capacidad de hacer del aprendizaje una parte integral de su vida. Para ello, el PEI se transforma y mejora sus estándares de desempeño, incluyendo los nuevos perfiles del estudiante egresado con el Sello Tecnológico del Liceo, los cuales son requeridos y pretenden ser una orientación más exigente para el estudiante para que pueda insertarse con éxito a un mundo tecnológico desafiante y de transformación continua.",
+  },
+];
+---
+
+<div class="grid lg:grid-cols-2 gap-6 p-6">
+  {
+    cards.map((card) => (
+      <article class="border border-l-4 border-r-4 bg-cards/[0.8] border-bordes rounded-xl shadow-md p-6 transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
+        <h3 class="card-titulo border-b-1 border-bordes">
+          {card.title}
+        </h3>
+        <p class="text-letras text-[16px] font-open">{card.description}</p>
+      </article>
+    ))
+  }
+</div>

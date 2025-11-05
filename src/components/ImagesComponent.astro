@@ -1,0 +1,38 @@
+---
+import type { ImageProps } from '../data/Props';
+import MisionyVision from '../assets/images/mision-y-vision.png';
+import NuestrosValores from '../assets/images/Nuestros-valores.jpg';
+import Historia from '../assets/images/historia.jpg';
+import Emblema from '../assets/images/emblema.png';
+import Aporte from '../assets/images/aporte.jpg';
+import Produccion from '../assets/images/produccion.jpg';
+import Sleep from '../assets/images/sleep.jpg';
+
+const { name, class: className = 'w-[1200px] h-[300px] object-cover rounded-lg mx-auto block font-open', title } = Astro.props as ImageProps;
+
+let src: string;
+
+if (name === 'mision') {
+  src = MisionyVision.src;
+} else if (name === 'valores') {
+  src = NuestrosValores.src;
+} else if (name === 'historia') {
+  src = Historia.src;
+} else if (name === 'emblema') {
+  src = Emblema.src;
+} else if (name === 'aporte') {
+  src = Aporte.src;
+} else if (name === 'produccion') {
+  src = Produccion.src;
+} else if (name === 'sleep') {
+  src = Sleep.src;
+} else {
+  src = '';
+}
+
+---
+
+<div class="relative w-[900px] mx-auto mt-30 mb-10 flex justify-center items-center">
+  <h1 class="text-letras font-semibold absolute bg-cards/55 w-[450px] rounded-2xl text-left p-4 text-2xl">{title }</h1>
+  <img src={src} alt={title || `Imagen ${name}`} class={className} />
+</div>

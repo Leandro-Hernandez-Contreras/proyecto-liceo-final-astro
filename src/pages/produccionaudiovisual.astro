@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProduccionImage from '../components/ImagesComponent.astro';
+import GalleryToggle from '../components/MultiLevelGallery.astro';
+const produccionImages = [
+  "/src/assets/images/galeria/imgi_1_IMG_1709.jpg",
+  "/src/assets/images/galeria/imgi_22_IMG_1712.jpg",
+  "/src/assets/images/galeria/imgi_23_IMG_1708.jpg",
+  "/src/assets/images/galeria/imgi_24_IMG_1713.jpg",
+  "/src/assets/images/galeria/imgi_25_IMG_1715.jpg",
+  "/src/assets/images/galeria/imgi_26_IMG_1722.jpg",
+  "/src/assets/images/galeria/imgi_27_IMG_1721.jpg",
+  "/src/assets/images/galeria/imgi_28_IMG_1720.jpg",
+  "/src/assets/images/galeria/imgi_29_IMG_1719.jpg",
+  "/src/assets/images/galeria/imgi_30_IMG_1718.jpg",
+  "/src/assets/images/galeria/imgi_31_IMG_1716.jpg",
+  "/src/assets/images/galeria/imgi_32_IMG_1723.jpg",
+  "/src/assets/images/galeria/imgi_33_IMG_1724.jpg",
+  "/src/assets/images/galeria/imgi_34_IMG_1725.jpg",
+  "/src/assets/images/galeria/imgi_35_IMG_1726.jpg",
+  "/src/assets/images/galeria/imgi_36_IMG_1727.jpg",
+  "/src/assets/images/galeria/imgi_37_IMG_1728.jpg",
+  "/src/assets/images/galeria/imgi_38_IMG_1740.jpg",
+  "/src/assets/images/galeria/imgi_39_IMG_1736.png",
+  "/src/assets/images/galeria/imgi_40_IMG_1733.jpg",
+  "/src/assets/images/galeria/imgi_41_IMG_1732.jpg",
+  "/src/assets/images/galeria/imgi_42_IMG_1730.jpg",
+  "/src/assets/images/galeria/imgi_43_IMG_1729.jpg",
+  "/src/assets/images/galeria/imgi_44_IMG_1743.jpg",
+  "/src/assets/images/galeria/imgi_45_IMG_1744.jpg",
+  "/src/assets/images/galeria/imgi_46_IMG_1745.jpg",
+  "/src/assets/images/galeria/imgi_47_IMG_1746.jpg",
+  "/src/assets/images/galeria/imgi_48_IMG_1753.jpg",
+  "/src/assets/images/galeria/imgi_49_IMG_1754.jpg",
+  "/src/assets/images/galeria/imgi_5_IMG_1708.jpg",
+  "/src/assets/images/galeria/imgi_50_IMG_1890.jpg",
+  "/src/assets/images/galeria/imgi_51_IMG_1894.jpg",
+  "/src/assets/images/galeria/imgi_52_IMG_1895.jpg",
+  "/src/assets/images/galeria/imgi_53_IMG_1896.jpg",
+  "/src/assets/images/galeria/imgi_54_IMG_1897.jpg",
+  "/src/assets/images/galeria/imgi_55_IMG_1900.jpg",
+  "/src/assets/images/galeria/imgi_56_IMG_1908.jpg",
+  "/src/assets/images/galeria/imgi_57_IMG_1906.jpg",
+  "/src/assets/images/galeria/imgi_58_IMG_1905.jpg",
+  "/src/assets/images/galeria/imgi_59_IMG_1904.jpg",
+  "/src/assets/images/galeria/imgi_60_IMG_1902.jpg",
+  "/src/assets/images/galeria/imgi_61_IMG_1901.jpg",
+  "/src/assets/images/galeria/imgi_62_IMG_1909.jpg",
+  "/src/assets/images/galeria/imgi_63_IMG_1910.jpg",
+  "/src/assets/images/galeria/imgi_64_IMG_1911.jpg",
+  "/src/assets/images/galeria/imgi_65_IMG_1912.jpg",
+  "/src/assets/images/galeria/imgi_66_IMG_1914.jpg",
+  "/src/assets/images/galeria/imgi_67_IMG_1915.jpg",
+  "/src/assets/images/galeria/imgi_68_IMG_1921.jpg",
+  "/src/assets/images/galeria/imgi_69_IMG_1920.jpg",
+  "/src/assets/images/galeria/imgi_70_IMG_1919.jpg",
+  "/src/assets/images/galeria/imgi_71_IMG_1918.jpg",
+  "/src/assets/images/galeria/imgi_72_IMG_1917.jpg",
+  "/src/assets/images/galeria/imgi_73_IMG_1916.jpg",
+  "/src/assets/images/galeria/imgi_74_IMG_1922.jpg",
+  "/src/assets/images/galeria/imgi_75_IMG_1923.jpg",
+  "/src/assets/images/galeria/imgi_76_IMG_1924.jpg",
+  "/src/assets/images/galeria/imgi_77_IMG_1925.jpg",
+  "/src/assets/images/galeria/imgi_78_IMG_1926.jpg",
+  "/src/assets/images/galeria/imgi_79_IMG_1929.jpg",
+  "/src/assets/images/galeria/imgi_80_IMG_1930.jpg"
+
+];
+---
+<Layout>
+<!-- Titulo e Imagen-->
+<ProduccionImage name="produccion" title="Centro de Producción Audiovisual" />
+<!-- Descripcion -->
+<div>
+  <p class="cards-big">
+    AYTUE, cuyo significado en lengua Veliche es “Tierra Amada”, es un establecimiento educacional que se ubica en la comuna Castro, provincia de Chiloé, en la X Región de Los Lagos, de dependencia Municipal Subvencionado, creado oficialmente el 23 de Junio de 1965 con el nombre de escuela D – 75 de Castro Alto, a través del Decreto Ley N° 8063, comenzando su funcionamiento en las dependencias facilitadas por el Centro Hogar Alonso de Ercilla y Zúñiga, ubicado en calle Intendente Arturo García N° 647.
+    Posteriormente, en 1992, la escuela cambia otra vez de nombre y pasa a llamarse oficialmente Aytue, tras un concurso interno que realizaron los profesores(as).
+    Al nivel de Enseñanza Básica, se suma también la escuela Vespertina de Adultos que nació en el año 1999, y que hoy ofrece la totalidad de cursos de Enseñanza Media, modalidad vespertina.
+    En el año 2002 se inicia la Jornada Escolar Completa Diurna (JECD), convirtiéndose en la primera de la comuna, inicia sus atenciones el Módulo Dental y el Proyecto CRA.
+    En enero del año 2013 se inician los trabajos de mejoramiento y ampliación de la escuela, se remodelaron 404 metros cuadrados, además de una ampliación de 1.380 metros cuadrados y la construcción de un gimnasio que incluyó camarines.
+  </p>
+</div>
+<!-- Galeria -->
+<GalleryToggle
+  galleryImages={produccionImages}
+/>
+</Layout>

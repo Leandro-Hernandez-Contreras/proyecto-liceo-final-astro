@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AporteImages from "../components/ImagesComponent.astro";
+import CardsAporteComponent from "../components/CardsAporteComponent.astro";
+import Image from "../assets/images/descarga.png"
+---
+
+<Layout>
+  <!-- Titulo e Imagen -->
+<AporteImages name="aporte" title="Sellos Educativos" />
+  <!-- Proceso Pedagógico -->
+<div class="cards-big">
+  <h1 class="font-semibold">Proceso Pedagógico</h1>
+  <p>
+    El proceso de enseñanza del paradigma sociocognitivo, está condicionado en gran parte, en la percepción que tenga el docente de cómo aprende el estudiante, así como en la organización y transmisión de la información.
+    Esto significa que, el docente construirá un contexto de aprendizaje enconjunción con los estudiantes, con la finalidad de ir encaminándolos al control de éste (aprender a aprender); y, tendrá presente la parte social. <br/><br/>
+    En todos los niveles del Liceo Aytue, surgen las siguientes interrogantes: Qué queremos que aprendan nuestros estudiantes, ¿Cómo sabremos que aprendieron?, ¿Qué haremos con aquellos que no logran el aprendizaje esperado?<br/><br/>
+    Para dar respuesta a lo anterior, y lograr una visión compartida de aprendizaje al interior del mismo, se consideran 3 principios fundamentales, por autor: <br/><br/>
+    1. <strong>Primer Principio:</strong> Según Bransford, Brown y Cocking, 2000: “Los seres humanos poseen conocimientos previos que influyen significativamente en cómo perciben, interpretan y organizan su mundo”<br/><br/>
+    2. <strong>Segundo Principio:</strong> Según Bransford, Brown y Cocking, 2000: “Los seres humanos son sujetos activos que persiguen metas y que buscan asumir el control de su propio aprendizaje”. <br/><br/>
+    3. <strong>Tercer Principio:</strong> Según Putman y Borko, 2000: “El aprendizaje es un fenómeno de naturaleza social y de carácter situado”. <br/><br/>
+    De acuerdo a lo anterior, hemos adherido al supuesto que el aprendizaje es un proceso social y situado en un contexto histórico y cultural, lo que determina en qué tipos de aprendizajes debemos centrarnos pensando en las demandas del siglo XXI, para que nuestros estudiantes desplieguen todos
+    sus talentos, desarrollen sus competencias tanto funcionales como conductuales para los tiempos actuales y venideros, junto con la oportunidad de crear su propio futuro.
+  </p>
+</div>
+<!-- Aprendizaje Profundo (Deep Learning) -->
+<div class="cards-big">
+  <h1 class="font-semibold">Aprendizaje Profundo (Deep Learning)</h1>
+    <p>
+      En la literatura se han destacado dos enfoques de aprendizaje relevantes: una orientación del aprendizaje hacia la comprensión del significado (enfoque profundo) y una orientación del aprendizaje hacia la reproducción (enfoque superficial). Los estudiantes con un enfoque
+      profundo del aprendizaje se centran en la comprensión de los significados cuando aprenden debido a un interés en la materia. Por ello, el aprendizaje implica explorar, descubrir y relacionar ideas nuevas y existentes, lo que a su vez implica el compromiso con el proceso de
+      aprendizaje y el pensamiento crítico (Monroy y González-Geraldo, 2017). Para Martinez, McGrath y Foster (2016), las escuelas que promueven el denominado Aprendizaje Profundo buscan que sus estudiantes desarrollen competencias que posibilitan aprender a utilizar y aplicar lo que han
+      aprendido a problemas y situaciones novedosas. Esto considera el hecho de que los aprendices crean y usan el conocimiento en el mundo real (Cortez,2018). En cambio, los estudiantes con un enfoque superficial muestran poco compromiso con la tarea en cuestión y memorizan el tema para aprobarlo
+      (Monroy y González-Geraldo, 2017). <br/><br/> En las escuelas que promueven este aprendizaje, el proceso se centra más bien en la exposición a contenidos, desde una enseñanza altamente directiva, que promueve el desarrollo de respuestas a preguntas de
+      antemano conocidas. <br/><br/> Nuevas formas de interrelación entre el docente y el estudiante son requeridas en relación a los contenidos y el uso del conocimiento, por tanto, un aprendizaje más profundo moviliza el rol del docente para
+      facilitar experiencias de aprendizaje donde los estudiantes se sientan empoderados y motivados, como desarrollar aprendizajes contextualizados, conectados con la vida real, y extendidos más allá de la escuela. Cumplir este rol considera también el permitir a los estudiantes traer sus
+      propias experiencias personales y conocimientos. Plantea también una nueva relación con la tecnología, como una extensión de la cognición humana. <br/><br/> Según Santiago Rincón-Gallardo (2018), señala que el aprendizaje profundo es tanto el proceso como el resultado de dar sentido a las cuestiones que
+      nos interesan. Este aprendizaje contempla el desarrollo de seis competencias: Creatividad, Pensamiento Crítico, Comunicación, Colaboración, Carácter y Ciudadanía, como las 6 C de Michaell Fullan.<br/><br/>
+    </p>
+</div>
+<!-- 6 C’s de Educación -->
+<div class="cards-big">
+  <h1 class="font-semibold">La importancia de las 6 C’s de la educación</h1>
+  <p>
+    En un mundo en constante cambio, uno de los deberes del Liceo es preparar a las nuevas generaciones de estudiantes para sus futuros trabajos, los cuales son inciertos e impredecibles, debido a que nuevos trabajos se
+    crean todos los días, requiriendo de manera permanente en su formación nuevas competencias educativas, las cuales complementan nuestro PEI:
+  </p>
+  <div class="mx-auto mt-10 mb-10 flex justify-center items-center">
+    <img
+      src={Image.src}
+      alt=""
+      class="w-[450px] h-[450px]"
+    />
+  </div>
+</div>
+<!-- 6 C’s de Educación -->
+<div class="cards-big">
+  <h1 class="font-bold text-center text-[24px] text-letras">6 C’s de Educación</h1>
+  <CardsAporteComponent />
+</div>
+</Layout> 

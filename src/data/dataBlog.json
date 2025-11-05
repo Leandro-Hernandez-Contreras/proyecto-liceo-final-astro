@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Convenio en acción: Liceo Aytue y Universidad de Los Lagos",
+    "descripcion": "Esta semana, la profesora de la Universidad de Los Lagos Catalina Sánchez llegó junto a estudiantes en práctica de Técnico Deportivo de 2° año, quienes se integran a nuestro liceo en el marco del convenio colaborativo entre ambas instituciones.",
+    "imagen": "/src/images/articulos/imgi_1_PORTADA.jpg",
+    "autor": "cmunoz",
+    "fecha": "12 de septiembre de 2025",
+    "categoria": "Universidad de los Lagos",
+    "contenido": "Esta semana, la profesora de la Universidad de Los Lagos Catalina Sánchez llegó junto a estudiantes en práctica de Técnico Deportivo de 2° año, quienes se integran a nuestro liceo en el marco del convenio colaborativo entre ambas instituciones.",
+    "contenidodos":"Como parte de su práctica temprana, los y las estudiantes podrán fortalecer y aplicar las herramientas adquiridas en el transcurso de su carrera, aportando con entusiasmo y dedicación al aprendizaje de nuestros alumnos y alumnas.",
+    "contenidotres":"En la ocasión, fueron recibidos por nuestro Inspector General Pablo Labraña, el Coordinador de Extraescolar Jorge Ruiz y el Director del Liceo Aytue, Pedro Velásquez, quienes dieron la bienvenida a esta valiosa instancia de colaboración."
+  },
+  {
+    "id": 2,
+    "title": "Celebrando nuestras tradiciones",
+    "descripcion": "Esta mañana, 09 de septiembre de 2025, dimos inicio a las muestras de bailes típicos en el marco de la celebración de nuestras Fiestas Patrias.",
+    "imagen": "/src/images/articulos/imgi_2_PORTADA.jpg",
+    "autor": "cmunoz",
+    "fecha": "10 de septiembre de 2025",
+    "categoria": "Fiestas Patrias",
+    "contenido": "La mañana del 09 de septiembre de 2025, se dieron inicio a las muestras de bailes típicos en el marco de la celebración de nuestras Fiestas Patrias. A primera hora, fueron los estudiantes del primer bloque (Pre Kinder a 3° Básico) quienes se lucieron con sus presentaciones artísticas, llenando de color, música y alegría el escenario.",
+    "contenidodos":"Alumnos y alumnas de enseñanza media, se lucieron con sus presentaciones artísticas, llenando de color, música y alegría el escenario. Padres y apoderados disfrutaron con orgullo de cada punto artístico, valorando el entusiasmo y dedicación de sus hijos e hijas.",
+    "contenidotres":"Alumnos y alumnas de 4to básico a 8vo básico, se lucieron con sus presentaciones artísticas, llenando de color, música y alegría el escenario. Padres y apoderados disfrutaron con orgullo de cada punto artístico, valorando el entusiasmo y dedicación de sus hijos e hijas."
+  },
+  {
+    "id": 3,
+    "title": "Un viaje por el universo en el Planetario del Liceo Aytue",
+    "descripcion": "Durante esta semana, los cursos de 3° a 5° básico tuvieron la oportunidad de visitar el Planetario de nuestro Liceo Aytue, actividad con la que se dio cierre a la unidad del Sistema Solar.",
+    "imagen": "/src/images/articulos/imgi_3_PORTADA.jpg",
+    "autor": "cmunoz",
+    "fecha": "10 de septiembre de 2025",
+    "categoria": "Planetario",
+    "contenido": "Durante esta semana, los cursos de 3° a 5° básico tuvieron la oportunidad de visitar el Planetario de nuestro Liceo Aytue, actividad con la que se dio cierre a la unidad del Sistema Solar trabajada en clases.", 
+    "contenidodos":"Actividades como esta reflejan nuestro compromiso de entregar una educación significativa y enriquecedora, donde cada aprendizaje se convierte en una experiencia inolvidable para nuestros estudiantes."
+  },
+  {
+    "id": 4,
+    "title": "Visita a la Universidad de Los Lagos – Castro, Chiloé",
+    "descripcion": "Nuestros estudiantes de 4° Medio HC y TP participaron en una enriquecedora visita a la Universidad de Los Lagos. El objetivo fue orientar a los jóvenes a través de experiencias prácticas que complementen su formación académica, entregándoles herramientas que les permitan tomar decisiones informadas para su vida profesional.",
+    "imagen": "/src/images/articulos/imgi_4_PORTADA.jpg",
+    "autor": "cmunoz",
+    "fecha": "10 de septiembre de 2025",
+    "categoria": "Universidad de los Lagos",
+    "contenido": "Nuestros estudiantes de 4° Medio HC y TP participaron en una enriquecedora visita a la Universidad de Los Lagos. El objetivo fue orientar a los jóvenes a través de experiencias prácticas que complementen su formación académica, entregándoles herramientas que les permitan tomar decisiones informadas para su vida profesional.",
+    "contenidodos":"Esta es la tercera visita realizada durante el año, instancia en la que los estudiantes conocen las diferentes alternativas de educación superior y continúan explorando su futuro.",
+    "contenidotres":"Como Liceo Aytue seguimos participando activamente en ferias y visitas educacionales, fortaleciendo los caminos hacia nuevas oportunidades."
+  },
+  {
+    "id": 5,
+    "title": "EXPO CEDUC – Castro, Chiloé",
+    "descripcion": "Nuestros estudiantes de 4° Medio HC y TP participaron en la EXPO CEDUC, realizada en el Centro de Formación Técnica CEDUC de Castro.",
+    "imagen": "/src/images/articulos/imgi_5_PORTADA.jpg",
+    "autor": "cmunoz",
+    "fecha": "10 de septiembre de 2025",
+    "categoria": "Exposición",
+    "contenido": "Nuestros estudiantes de 4° Medio HC y TP participaron en la EXPO CEDUC, realizada en el Centro de Formación Técnica CEDUC de Castro. El objetivo fue orientar y entregar herramientas que apoyen la elección de sus futuras carreras profesionales, brindándoles información de gran valor para su desarrollo.",
+    "contenidodos":"Como Liceo Aytue seguimos participando activamente en diferentes ferias educacionales, abriendo caminos y nuevas oportunidades para nuestros estudiantes."
+  },
+  {
+    "id": 6,
+    "title": "Feria Educacional Superior – Castro, Chiloé",
+    "descripcion": "Nuestros estudiantes de 4° Medio HC y TP participaron en la Feria Educacional Superior realizada en el Liceo Politécnico de Castro.",
+    "imagen": "/src/images/articulos/imgi_6_PORTADA.jpg",
+    "autor": "cmunoz",
+    "fecha": "10 de septiembre de 2025",
+    "categoria": "Feria Educacional",
+    "contenido": "Nuestros estudiantes de 4° Medio HC y TP participaron en la Feria Educacional Superior realizada en el Liceo Politécnico de Castro. El objetivo fue orientar y entregar herramientas que apoyen la elección de sus futuras carreras profesionales, brindándoles información de gran valor para su desarrollo.",
+    "contenidodos":"Una experiencia enriquecedora que abre caminos y nuevas oportunidades.",
+    "contenidotres":"Como Liceo Aytue seguimos participando activamente en ferias y visitas educacionales, fortaleciendo los caminos hacia nuevas oportunidades."
+  }
+]

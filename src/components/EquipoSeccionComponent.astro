@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  containerClass?: string;
+}
+const { title, containerClass } = Astro.props;
+---
+<section>
+  <h2 class=" titulos !justify-center items-center mx-auto m-10">
+    {title}
+  </h2>
+  <div class:list={["card-equipo", containerClass]}>
+    <slot />
+  </div>
+</section>

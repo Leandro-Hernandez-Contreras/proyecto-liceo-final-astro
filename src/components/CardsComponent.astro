@@ -1,0 +1,45 @@
+---
+import type { CardMisionyVision } from '../data/Props';
+
+const cards: CardMisionyVision[] = [
+  {
+    title: "Responsabilidad",
+    description: "Se trata de una característica positiva, entendida por el cumplimiento de las obligaciones, o el cuidado al tomar decisiones o realizar algo, como también asumir las consecuencias que tengan las decisiones y responder ante quien corresponda en cada momento, ejerciendo sus derechos y desempeñando sus obligaciones.",
+  },
+  {
+    title: "Verdad",
+    description: "Está asociado con la conformidad de lo que se dice con lo que se piensa o siente, el compromiso con la verdad constituye un valor fundamental para los integrantes de esta unidad educativa y encuentra en el hogar y en el colegio los ámbitos naturales para su formación.",
+  },
+  {
+    title: "Compromiso",
+    description: "Entendida como la responsabilidad para asumir las obligaciones, acuerdos, tareas y actividades, entre otras, en las que se ha asumido algún compromiso y/o acuerdo de cumplimiento.",
+  },
+  {
+    title: "Respeto",
+    description: "Es uno de los valores morales más importantes del ser humano, pues es fundamental para lograr una armoniosa interacción social. Para ser respetado es necesario saber o aprender a respetar, a comprender al otro, a valorar sus intereses y necesidades, nace de un sentimiento de reciprocidad, se trata de no discriminar ni ofender.",
+  },
+  {
+    title: "Solidaridad",
+    description: "Persigue enseñar a concretar el amor al prójimo que debe caracterizar a los estudiantes, se entiende como la capacidad de entregarse a otros individuos pensando en estos como semejantes, apoyar y/o colaborar frente a la dificultad y/o necesidades de otros, precedido por un sentimiento de empatía.",
+  },
+  {
+    title: "Confianza",
+    description: "Persigue lograr la confianza en uno mismo y también la confianza que los demás tienen de nosotros. La confianza hace que la persona llegue más fácilmente a sus metas. Por otro lado, la confianza mutua con los compañeros ayuda a generar una convivencia adecuada para el entorno de cada persona.",
+  },
+  {
+    title: "Colaboración",
+    description: "Busca que los miembros de la comunidad educativa se apoyen mutuamente en la búsqueda del desarrollo personal y del bien común. Se requiere entonces, recuperar el sentido de la cooperación, imponiéndolo sobre la competitividad derivada del individualismo, fortaleciendo el trabajo en equipo.",
+  }
+];
+---
+
+<div class="grid lg:grid-cols-3 gap-6 p-6 ">
+  {cards.map((card) => (
+    <div class="flex flex-wrap justify-center gap-8 p-5">
+    <div>
+      <h3 class="card-titulo">{card.title}</h3>
+      <p class="text-letras">{card.description}</p>
+    </div>
+    </div>
+  ))}
+</div>

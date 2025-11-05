@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ArticuloCard from "../../components/ArticulosNoticiasComponent.astro";
+import articlesData from "../../data/dataBlog.json";
+
+const articles = articlesData;
+---
+
+<Layout title="Noticias">
+  <div class="py-8 px-8">
+    {articles && articles.length ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {articles.map((article) => (
+          <ArticuloCard
+            href={`/blog/${article.id}`}
+            src={article.imagen}
+            category={article.categoria}
+            categoryBgClass="bg-blue-600/[0.8]"
+            date={article.fecha}
+            datetime={article.fecha}
+            title={article.title}
+            description={article.descripcion}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="bg-cards rounded-lg p-6 text-letras shadow">
+        <p>No hay noticias disponibles por el momento.</p>
+      </div>
+    )}
+
+    <div class="mt-8">
+      <a href="/" class="inline-flex items-center font-semibold text-blue-600 hover:text-blue-800">
+        ← Volver al inicio
+      </a>
+    </div>
+  </div>
+</Layout>

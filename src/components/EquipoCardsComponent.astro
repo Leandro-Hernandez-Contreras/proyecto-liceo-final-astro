@@ -1,0 +1,12 @@
+---
+interface Props {
+  src: string;
+  text: string;
+}
+
+const { src, text } = Astro.props;
+---
+<div class:list={["card-equipo-gen"]}>
+  <img src={src} alt={text} class="img-card">
+  <p class="text-card">{text}</p>
+</div>

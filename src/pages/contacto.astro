@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro"
+import FormCard from '../components/FormCardComponent.astro';
+import InputField from '../components/CasillasComponent.astro';
+---
+<Layout>
+<!-- Base -->
+<div class="cards-big"> 
+  <!-- Titulo -->
+    <h5 class="titulo-contacto">Formulario de Contacto</h5>
+    <!-- Descripcion -->
+      <p class="contacto">
+          El Equipo del Liceo está comprometido en atender sus consultas y preocupaciones de manera eficiente. 
+          Valoramos su retroalimentación y estamos dispuestos a colaborar con usted en todo momento.
+      </p>
+      <p class="contacto">Contáctenos a través del siguiente formulario.</p>
+        <!-- Formulario -->
+        <div class="mx-auto py-10">
+          <FormCard buttonText="Enviar Mensaje">
+          <InputField id="nombre" label="Nombre Completo" />
+          <InputField id="correo" label="Correo" type="email" />
+          <InputField id="asunto" label="Asunto" />
+          <InputField id="mensaje" label="Mensaje" />        
+          </FormCard>
+        </div>
+</div>
+</Layout>
